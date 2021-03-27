@@ -1,0 +1,72 @@
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">TradeEngine </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/login">LogOut</a>
+            </li>
+           
+          </ul>
+        
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="sidebar myDiv">
+    <a class="active" href="/dashboard"><i class="fa fa-home"></i> Home</a>
+    <a href="/create"><i class="fa fa-paper-plane"></i> Place Order</a>
+    <a href="/cancel"><i class="fa fa-window-close"></i> Cancel Order</a>
+    <a href="/list"> <i class="fa fa-list"></i> List Orders</a>
+    <a href="#about"> <i class="fa fa-sign-out"></i> LogOut</a>
+    
+  </div>
+
+<main class="container">
+ 
+
+    
+
+        <div class="row h-100 p-5 justify-content-center align-items-center  bg-light">
+            <div class="col-md-6 p-5">
+            <form class="form-signin p-3">
+            
+              <h1 class="h3 mb-3 font-weight-normal">Please Place Order</h1>
+              <label for="inputEmail" class="sr-only">Order Details</label>
+              <input type="text" id="inputEmail" class="form-control mg-2bg-light" placeholder="details" required autofocus>
+              <br>
+              <label for="inputPassword" class="sr-only">Price</label>
+              <input type="text" id="inputPassword" class="form-control mb-3" placeholder="Price" required>
+        
+              <label for="inputPassword" class="sr-only">Order Type</label>
+              <input type="text" id="inputPassword" class="form-control mb-3" placeholder="Password" required>
+        
+            
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+             
+            </form>
+        </div>
+        </div>
+     
+  
+     
+
+ 
+  
+  
+ 
+
+
+
+
+  </main>
