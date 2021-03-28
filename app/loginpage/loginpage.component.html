@@ -1,7 +1,7 @@
 
 
- 
-    
+
+
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -22,29 +22,33 @@
                   <a class="nav-link text-white" href="register" tabindex="-1" aria-disabled="true">Register</a>
                 </li>
               </ul>
-            
+
             </div>
           </div>
         </nav>
-  
-  
-        
+
+
+
       </header>
 <div class="row h-100 p-5 justify-content-center align-items-center  bg-light">
     <div class="col-md-6 p-5">
-    <form class="form-signin p-3">
-    
+      <div  *ngIf="messages"><p class="alert alert-danger">Error: {{messages}}</p></div>
+
+   <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)">
+
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control mg-2bg-light" placeholder="Email address" required autofocus>
+      <input type="text" name ="email" id="inputEmail" class="form-control mg-2bg-light" placeholder="Email address" required autofocus ngModel>
       <br>
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Password" required>
-    
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-     
+      <input type="password" name="password" id="inputPassword" class="form-control mb-3" placeholder="Password" required ngModel>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="submit">Sign in</button>
+
     </form>
 </div>
+
+
 
 
 </div>
