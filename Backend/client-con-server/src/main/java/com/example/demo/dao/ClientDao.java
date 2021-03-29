@@ -15,7 +15,7 @@ public interface ClientDao {
     void   createClient(long clientid,String firstname, String lastname, String email, String password, double funds );
     List<Client> getPassword(String  email);
     void   deleteClient(long clientid);
-    void addToken(long clientid, String token);
+    void addToken(String token);
     void deletetoken(String token);
     List<Client> getToken(String  token);
 

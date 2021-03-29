@@ -44,8 +44,9 @@ public class OrderController {
 		int quantity = order.getQuantity();
 		double price = order.getPrice();
 		String side = order.getSide();
+		
 		 System.out.print( order);
-		var response = soapClient.setOrder(productName, quantity, price, side);
+		var response = soapClient.setOrder(productName, quantity, price, side,200.0,5,1);
 		return response;
 	}
 	

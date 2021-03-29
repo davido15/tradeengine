@@ -12,14 +12,18 @@ import java.math.BigDecimal;
 
 public class OrderSOAPClient extends WebServiceGatewaySupport {
 
-    public ValidationResponse setOrder(String product, int quantity,  double price, String side) {
+    public ValidationResponse setOrder(String product, int quantity,  double price, String side ,double funds, int quantityOwned,int portfolioid) {
 
         ValidateOrder request = new ValidateOrder();
         request.setProduct(product);
         request.setQuantity(quantity);
         request.setPrice(BigDecimal.valueOf(price));
         request.setSide(side);
-
+        request.setFunds(BigDecimal.valueOf(funds));
+        request.setQuantityOwned(quantityOwned);
+        request.setPortfolioID(portfolioid);
+        
+        
         ValidationResponse response = (ValidationResponse) getWebServiceTemplate().marshalSendAndReceive("http://ordervalidation.herokuapp.com/ws/Order", request,
                         new SoapActionCallback(
                                 "http://turntabl/trading/ordervalidservice/validateOrder"));

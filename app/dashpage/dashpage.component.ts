@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashpage.component.css']
 })
 export class DashpageComponent implements OnInit {
-
+  usertoken:any;
   constructor() { }
 
   ngOnInit(): void {
+this.usertoken = localStorage.getItem("token");
+console.log(this.usertoken)
   }
 
 }

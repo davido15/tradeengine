@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient,HttpResponse} from '@angular/common/http'
 import {DataAccessService} from '../services/data-access.service';
 
 @Component({
@@ -22,19 +22,24 @@ export class LoginpageComponent implements OnInit {
 
   };
        onClickSubmit(data) {
-         console.log(data)
+        console.log(data)
         this.dataAccess.loginuser(data)
-        .subscribe( data => {  this.resultlist=data
-            console.log(this.resultlist );
+        .subscribe(( data: HttpResponse<any>)=> {  this.resultlist=data
+          
+          if(this.resultlist){
+            localStorage.setItem('token', this.resultlist.token);
             this.router.navigate(['/dashboard']);
+          }
+           
           },
           error => this.messages="Invalid Credentials" // You may show error message on the template
         )
-
+     
+     
    }
 
 
 
 
 
-}
+  }

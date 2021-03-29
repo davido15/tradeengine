@@ -39,20 +39,34 @@
 
         <div class="row h-100 p-5 justify-content-center align-items-center  bg-light">
             <div class="col-md-6 p-5">
-            <form class="form-signin p-3">
+              <form #order = "ngForm" (ngSubmit) = "onClickSubmit(order.value)">
             
               <h1 class="h3 mb-3 font-weight-normal">Please Place Order</h1>
+
+              <div  *ngIf="messages"><p class="alert alert-danger">Error: {{messages}}</p></div>
+
+              <small  *ngIf="usertoken">Session Email: {{usertoken}}</small>
+
               <label for="inputEmail" class="sr-only">Order Details</label>
-              <input type="text" id="inputEmail" class="form-control mg-2bg-light" placeholder="details" required autofocus>
+              <input type="text" id="inputEmail" class="form-control mg-2bg-light" placeholder="details" required autofocus ngModel>
               <br>
-              <label for="inputPassword" class="sr-only">Price</label>
-              <input type="text" id="inputPassword" class="form-control mb-3" placeholder="Price" required>
+              <label for="price" class="sr-only">Price</label>
+              <input type="text" id="price" name="price" class="form-control mb-3" placeholder="price" required ngModel>
         
-              <label for="inputPassword" class="sr-only">Order Type</label>
-              <input type="text" id="inputPassword" class="form-control mb-3" placeholder="Password" required>
+              <label for="quantity" class="sr-only">Quantity</label>
+              <input type="number" min="0" step="1" oninput="validity.valid||(value='');"  id="quantity" name="quantity" class="form-control mb-3" placeholder="quantity" required ngModel>
+              <label for="side" class="sr-only">SIDE</label>
+
+              <select id="side"  name="side" class="form-control mb-3" aria-label="side" required ngModel>
+                <option selected>select side</option>
+                <option value="BUY">BUY</option>
+                <option value="SELL">SELL</option>
+               
+              </select>
+              
         
             
-              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Place Order</button>
              
             </form>
         </div>

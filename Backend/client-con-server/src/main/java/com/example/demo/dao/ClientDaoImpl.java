@@ -66,9 +66,9 @@ public class ClientDaoImpl implements ClientDao {
 	    }
 
 	@Override
-	public void addToken(long clientid, String token) {
-		String sql = "Insert into tokendata (id,access_token ) values(?,?)";
-        jdbcTemplate.update(sql, new Object[]{clientid, token});
+	public void addToken(String token) {
+		String sql = "Insert into tokendata (access_token ) values(?)";
+        jdbcTemplate.update(sql, new Object[]{ token});
 		
 	}
 
